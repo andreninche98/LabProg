@@ -17,6 +17,27 @@ public:
 
     virtual ~IniFileManager();
 
+    string getFileName();
+
+    void setFileName(string FileName);
+
+    string getValue(string section, string parameter);
+
+    void setValue(string section, string parameter, string newValue);
+
+    void modify(string section, string parameter, string newValue);
+
+    void removeParameter(string section, string parameter);
+
+    void removeSection(string section);
+
+    void addParameter(string section, string newParameter);
+
+    void addSection(string newSection);
+
+    void nullify(string section, string parameter);
+
+
 private:
     string FileName;
     map<string, map<string, string>> file;
