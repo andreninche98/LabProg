@@ -13,7 +13,7 @@ using namespace std;
 
 class IniFileManager {
 public:
-    explicit IniFileManager(const string &FileName, int MaxComments = 100);
+    explicit IniFileManager(const string &FileName, int MaxComments = 50);
 
     virtual ~IniFileManager();
 
@@ -36,6 +36,26 @@ public:
     void addSection(string newSection);
 
     void nullify(string section, string parameter);
+
+    bool findSection(string section);
+
+    bool findParameter(string section, string parameter);
+
+    void printSections();
+
+    void printParameters(string section);
+
+    void printValue(string section, string parameter);
+
+    void printAll();
+
+    void end();
+
+    int numParameters(string section);
+
+    void addComment(string section, string textComment, bool inSection = false);
+
+    void reset();
 
 
 private:

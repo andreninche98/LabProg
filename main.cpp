@@ -9,6 +9,15 @@ int main() {
 
     file.addSection("Sezione 2");
     file.addParameter("Sezione 1", "Parametro 2");
-    file.nullify("Sezione 1", "Parametro 1");
+    file.nullify("Sezione 2", "Parametro 2");
+
+    file.addComment("Ciao!", "Ciao!", false);
+
+    file.printAll();
+
+    int NumberOfParameters = file.numParameters("Sezione 1");
+    std::cout << " Numero parametri prima sezione: " << NumberOfParameters << std::endl;
+
+    file.end();
 
 }
